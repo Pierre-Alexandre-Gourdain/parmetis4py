@@ -40,11 +40,14 @@ parmetis_lib_dir = os.path.join(petsc_build_dir, 'lib')
 metis_inc_dir = os.path.join(petsc_build_dir, 'include')
 
 try:
-    mpi_dir = os.environ['MPI_DIR']
+    mpi_dir = os.environ['MPI_HOME']
 except KeyError:
     raise RuntimeError("Please set MPI_DIR environment variable (will look for $MPI_DIR/include and $MPI_DIR/lib).")
-mpi_inc_dir = os.path.join(mpi_dir, 'include')
 mpi_lib_dir = os.path.join(mpi_dir, 'lib')
+try:
+    mpi_inc_dir = os.environ['MPI_INCLUDE']
+except KeyError:
+    raise RuntimeError("Please set MPI_INCLUDE environment variable.")
 
 
 ext_modules = [
