@@ -7,7 +7,7 @@ Python bindings for the ParMETIS graph partitioning library.
 We need to find METIS, ParMETIS and MPI. If you are on Ubuntu 18.04 and have obtained METIS and ParMETIS via PETSc, then just set the following environment variables
 
     export PETSC_DIR=/path/to/your/petsc/
-    export PETSC_ARCH=linux-gnu-c-opt
+    export PETSC_ARCH=
     
 Then just run
     
